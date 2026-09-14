@@ -15,16 +15,11 @@ jobs:
     name: Fetch deps info
     runs-on: ubuntu-latest
     outputs:
-      download-link: ${{ steps.aseprite-link.outputs.download-link }}
-      release-tag: ${{ steps.aseprite-link.outputs.release-tag }}
+      download-link: ""
+      release-tag: 1.3.8
     steps:
-      - name: Fetch Aseprite release link
-        id: aseprite-link
-        uses: a1393323447/fetch-release@main
-        with:
-            group: aseprite
-            repo: aseprite
-            match: Aseprite-.*?-Source.zip
+      - name: Hardcode version
+        run: echo "Building version v1.3.8.1 for Windows 7"
 
   create-release:
     name: Create Release
@@ -75,7 +70,7 @@ jobs:
         run: |
           if [[ "${{ runner.os }}" == "Windows" ]] ; then
             choco install wget -y --no-progress
-            wget https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/Skia-Windows-Release-x64.zip
+            wget https://github.com/aseprite/skia/releases/download/m102-861a4773af/Skia-Windows-Release-x64.zip
             unzip Skia-Windows-Release-x64.zip -d skia
           elif [[ "${{ runner.os }}" == "macOS" ]] ; then
             wget https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/Skia-macOS-Release-arm64.zip
