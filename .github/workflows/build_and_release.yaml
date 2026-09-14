@@ -70,7 +70,7 @@ jobs:
         run: |
           if [[ "${{ runner.os }}" == "Windows" ]] ; then
             choco install wget -y --no-progress
-            wget https://github.com/aseprite/skia/releases/download/m102-861a4773af/Skia-Windows-Release-x64.zip
+            wget https://github.com/aseprite/skia/releases/download/m102-861e4743af/Skia-Windows-Release-x64.zip
             unzip Skia-Windows-Release-x64.zip -d skia
           elif [[ "${{ runner.os }}" == "macOS" ]] ; then
             wget https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/Skia-macOS-Release-arm64.zip
