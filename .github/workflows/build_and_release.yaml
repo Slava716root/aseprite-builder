@@ -59,7 +59,7 @@ jobs:
         shell: bash
         run: |
           choco install wget -y --no-progress
-          wget https://github.com
+          wget https://github.com/aseprite/skia/releases/download/m102-861e4743af/Skia-Windows-Release-x64.zip
           unzip Skia-Windows-Release-x64.zip -d skia
 
       - uses: aseprite/get-ninja@main
