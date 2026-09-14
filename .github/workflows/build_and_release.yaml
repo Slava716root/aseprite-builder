@@ -74,9 +74,9 @@ jobs:
           export laf_backend=skia
           export enable_scripting=on
           
-          echo "set(CMAKE_POLICY_VERSION_MINIMUM 3.5)" > init_cache.cmake
           
           cmake -S . -B build -G Ninja \
+            -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
             -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
             -DENABLE_TESTS=OFF \
             -DENABLE_SCRIPTING=$enable_scripting \
